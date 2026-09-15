@@ -8,17 +8,23 @@ of GitHub/forum activity, hands-on testing, and desk research. This is a
 does not modify it.
 
 **Start here:** [`AGENT_GAPS_RESEARCH_SPEC.md`](AGENT_GAPS_RESEARCH_SPEC.md)
-(method, sourcing, rubric, biases) → [`REPORT.md`](REPORT.md) (findings).
+(method, sourcing, rubric, biases) → [`REPORT.md`](REPORT.md) (Phase 1
+current-state findings) → [`PHASE2_ECOSYSTEM_NEEDS.md`](PHASE2_ECOSYSTEM_NEEDS.md)
+(what those gaps imply as the ecosystem expands).
 
-Phase 1 (current-state gap analysis) is complete and is what's in this
-repo. Phase 2 (what these gaps imply as the ecosystem expands) is
-deliberately not started — see the spec's "Out of scope" section.
+Both phases are complete. Phase 1 is evidence-backed and rubric-scored;
+Phase 2 is explicitly labeled as grounded extrapolation with its own,
+separate confidence framework — see that file's opening section for how
+the two differ epistemically and how to weigh its claims.
 
 ## Layout
 
 ```
 AGENT_GAPS_RESEARCH_SPEC.md   Method: anchors, window, rubric, biases, disqualifiers
-REPORT.md                     Ranked findings per domain + cross-domain comparison
+REPORT.md                     Phase 1: ranked findings per domain + cross-domain comparison
+PHASE2_ECOSYSTEM_NEEDS.md     Phase 2: what the Phase 1 gaps imply as the ecosystem expands,
+                               each implication traced to specific Phase 1 evidence and
+                               checked against external corroboration found this session
 
 data/
   findings.csv                 One row per independent mention. The master dataset —
