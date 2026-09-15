@@ -25,6 +25,12 @@ REPORT.md                     Phase 1: ranked findings per domain + cross-domain
 PHASE2_ECOSYSTEM_NEEDS.md     Phase 2: what the Phase 1 gaps imply as the ecosystem expands,
                                each implication traced to specific Phase 1 evidence and
                                checked against external corroboration found this session
+PHASE2_FUTURE_PASS_CHECKIN.md Follow-up pass against Phase 2's own "what would update or
+                               falsify this" list. Confirms no time has actually elapsed in
+                               this environment yet, but a deeper same-window search still
+                               found a genuinely missed finding and confirmed two themes
+                               (CODE-AGENTSCOPE, CODE-CONTEXT) were undercounted by Phase 1's
+                               narrower keyword search — read as check-in #1, not a final word.
 
 data/
   findings.csv                 One row per independent mention. The master dataset —
