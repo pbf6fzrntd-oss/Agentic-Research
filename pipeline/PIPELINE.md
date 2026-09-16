@@ -19,4 +19,5 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | Multidisciplinary Center for Cannabinoid Research (MCCR), Hebrew University | Prof. Joseph (Yossi) Tam, DMD, PhD | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-mccr-hebrew-university.md |
 | MIRA Pharmaceuticals, Inc. | Dr. Itzchak Angel | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-mira-pharmaceuticals.md |
 | Cardiol Therapeutics Inc. | Dr. Andrew Hamer, MBChB (Chief Medical Officer & Head of R&D) | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-cardiol-therapeutics.md |
+| Ananda Pharma | Melissa Sturgess | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-ananda-pharma.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
