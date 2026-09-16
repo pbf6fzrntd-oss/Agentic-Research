@@ -1,34 +1,81 @@
 <title>CitraChem Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
-
   /*
-    Deliberately single-theme (dark slate + botanical green), a reasonable
-    scientific/life-sciences brand default — swap these tokens if/when
-    citrachem.com's own palette is confirmed.
+    Design: warm botanical neutrals (a nod to "Advancing the Science of
+    Nature") with a single green accent carried through both themes.
+    Fraunces (display) for the wordmark and section titles gives it a
+    scientific-journal character instead of a generic SaaS-dashboard
+    feel; Inter for UI text; JetBrains Mono for tabular data.
   */
   :root {
-    --bg: #0B0F0C;
-    --surface: #141A15;
-    --surface-sunken: #10140F;
-    --border: #263029;
-    --ink: #F2F5F2;
-    --ink-2: #A3AFA5;
-    --ink-3: #6E7A70;
-    --accent: #4ADE80;
-    --accent-soft: #86EFAC;
-    --accent-ink: #06170C;
-    --accent-wash: #12241A;
+    --bg: #F7F7F1;
+    --surface: #FFFFFF;
+    --surface-sunken: #EFEFE5;
+    --border: #E1E1D2;
+    --ink: #1A2219;
+    --ink-2: #57614E;
+    --ink-3: #8A927E;
+    --accent: #2E7D4F;
+    --accent-soft: #3F9663;
+    --accent-ink: #FFFFFF;
+    --accent-wash: #E7F3EA;
 
-    --stage-prospecting-bg: #191D1A; --stage-prospecting-fg: #9AA39C;
-    --stage-contacted-bg:   #1B2A20; --stage-contacted-fg:   #86EFAC;
-    --stage-replied-bg:     #1E3125; --stage-replied-fg:     #6EE7B7;
-    --stage-sample-bg:      #21362A; --stage-sample-fg:      #4ADE80;
-    --stage-quote-bg:       #233A2C; --stage-quote-fg:       #34D399;
+    --stage-prospecting-bg: #ECECE0; --stage-prospecting-fg: #6B7263;
+    --stage-contacted-bg:   #E5EDFB; --stage-contacted-fg:   #3A5FCB;
+    --stage-replied-bg:     #EFE7FB; --stage-replied-fg:     #7C4FD0;
+    --stage-sample-bg:      #DFF3EF; --stage-sample-fg:      #0E8E7E;
+    --stage-quote-bg:       #FBF0D6; --stage-quote-fg:       #92620B;
+    --stage-customer-bg:    #E1F3E5; --stage-customer-fg:    #227A46;
+    --stage-lost-bg:        #FBE3E7; --stage-lost-fg:        #B3283F;
+
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E140F;
+      --surface: #161D17;
+      --surface-sunken: #0F140F;
+      --border: #263329;
+      --ink: #EEF3ED;
+      --ink-2: #A7B3A1;
+      --ink-3: #71806C;
+      --accent: #4ADE80;
+      --accent-soft: #7CEBA5;
+      --accent-ink: #06170C;
+      --accent-wash: #16281C;
+
+      --stage-prospecting-bg: #1C231D; --stage-prospecting-fg: #9BA396;
+      --stage-contacted-bg:   #1B2440; --stage-contacted-fg:   #93AEFB;
+      --stage-replied-bg:     #241B3D; --stage-replied-fg:     #C6A9FA;
+      --stage-sample-bg:      #113330; --stage-sample-fg:      #5CEBD3;
+      --stage-quote-bg:       #362B10; --stage-quote-fg:       #F2C766;
+      --stage-customer-bg:    #12261B; --stage-customer-fg:    #4ADE80;
+      --stage-lost-bg:        #2C1620; --stage-lost-fg:        #FB7185;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E140F;
+    --surface: #161D17;
+    --surface-sunken: #0F140F;
+    --border: #263329;
+    --ink: #EEF3ED;
+    --ink-2: #A7B3A1;
+    --ink-3: #71806C;
+    --accent: #4ADE80;
+    --accent-soft: #7CEBA5;
+    --accent-ink: #06170C;
+    --accent-wash: #16281C;
+
+    --stage-prospecting-bg: #1C231D; --stage-prospecting-fg: #9BA396;
+    --stage-contacted-bg:   #1B2440; --stage-contacted-fg:   #93AEFB;
+    --stage-replied-bg:     #241B3D; --stage-replied-fg:     #C6A9FA;
+    --stage-sample-bg:      #113330; --stage-sample-fg:      #5CEBD3;
+    --stage-quote-bg:       #362B10; --stage-quote-fg:       #F2C766;
     --stage-customer-bg:    #12261B; --stage-customer-fg:    #4ADE80;
     --stage-lost-bg:        #2C1620; --stage-lost-fg:        #FB7185;
-
-    color-scheme: dark;
   }
 
   * { box-sizing: border-box; }
@@ -41,24 +88,26 @@
     max-width: 1180px;
     margin-inline: auto;
   }
-  h1, h2, h3 { font-family: 'Inter', system-ui, sans-serif; text-wrap: balance; margin: 0; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
   .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  .display { font-family: 'Fraunces', Georgia, serif; }
 
   header.page {
     display: flex; flex-wrap: wrap; gap: 14px 24px;
     align-items: center; justify-content: space-between;
-    margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
+    margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
   }
   .brand { display: flex; align-items: center; gap: 10px; }
   .brand .mark {
-    width: 26px; height: 26px; border-radius: 7px; background: var(--bg);
-    border: 1px solid var(--border); color: var(--ink);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 13px; flex-shrink: 0;
+    width: 30px; height: 30px; border-radius: 8px; background: var(--accent-wash);
+    color: var(--accent); display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
   }
-  header.page h1 { font-size: 24px; font-weight: 800; letter-spacing: -0.01em; text-transform: lowercase; }
-  header.page h1 .accent { color: var(--accent-soft); }
-  header.page .meta { color: var(--ink-3); font-size: 13px; }
+  .brand .mark svg { width: 17px; height: 17px; }
+  header.page h1 { font-family: 'Fraunces', Georgia, serif; font-size: 25px; font-weight: 600; letter-spacing: -0.01em; }
+  header.page h1 .accent { color: var(--accent); }
+  header.page .tagline { color: var(--ink-3); font-size: 12px; margin-top: 2px; letter-spacing: 0.02em; }
+  header.page .meta { color: var(--ink-3); font-size: 13px; text-align: right; }
   header.page .meta .mono { color: var(--ink-2); }
 
   .stat-grid {
@@ -69,7 +118,7 @@
     border: 1px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 28px;
+    margin-bottom: 22px;
   }
   .stat-tile {
     background: var(--surface);
@@ -77,9 +126,23 @@
     display: flex; flex-direction: column; gap: 6px;
     position: relative;
   }
-  .stat-tile .stripe { position: absolute; inset: 0 auto 0 0; width: 4px; }
-  .stat-tile .num { font-family: 'Inter', sans-serif; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .stat-tile .stripe { position: absolute; inset: 0 auto 0 0; width: 3px; }
+  .stat-tile .num { font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums; }
   .stat-tile .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); font-weight: 600; }
+
+  .funnel-wrap { margin-bottom: 28px; }
+  .funnel-track {
+    display: flex; height: 10px; border-radius: 999px; overflow: hidden;
+    background: var(--surface-sunken); border: 1px solid var(--border);
+  }
+  .funnel-seg { height: 100%; min-width: 3px; }
+  .funnel-legend {
+    display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 10px;
+    font-size: 12px; color: var(--ink-2);
+  }
+  .funnel-legend .item { display: flex; align-items: center; gap: 6px; }
+  .funnel-legend .swatch { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+  .funnel-legend .lost { color: var(--stage-lost-fg); margin-left: auto; }
 
   section { margin-bottom: 28px; }
   section > h2 {
@@ -104,11 +167,13 @@
 
   .empty-state {
     border: 1px dashed var(--border); border-radius: 10px;
-    padding: 28px 20px; text-align: center; color: var(--ink-2);
+    padding: 32px 20px; text-align: center; color: var(--ink-2);
     background: var(--surface);
   }
+  .empty-state .icon { color: var(--ink-3); margin-bottom: 10px; }
+  .empty-state .icon svg { width: 22px; height: 22px; }
   .empty-state p { margin: 6px 0; font-size: 13px; }
-  .empty-state code {
+  .empty-state code, .due-row code {
     background: var(--surface-sunken); padding: 1px 6px; border-radius: 4px;
     font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink);
   }
@@ -153,30 +218,42 @@
   footer.page code { font-family: 'JetBrains Mono', monospace; color: var(--ink-2); }
 
   @media (prefers-reduced-motion: no-preference) {
-    .stat-tile, .due-row, tbody tr { transition: background-color 0.15s ease; }
+    .stat-tile, .due-row, tbody tr, .funnel-seg { transition: background-color 0.15s ease, width 0.2s ease; }
   }
 </style>
 
 <header class="page">
   <div>
     <div class="brand">
-      <span class="mark">C</span>
-      <h1>citrachem <span class="accent">pipeline</span></h1>
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 11 13.75 13 12"/>
+        </svg>
+      </span>
+      <div>
+        <h1>CitraChem <span class="accent">pipeline</span></h1>
+        <div class="tagline">Outbound &middot; inbound &middot; customer-success, one view</div>
+      </div>
     </div>
-    <div class="meta" style="margin-top:4px;">Outbound &middot; inbound &middot; customer-success, one view</div>
   </div>
-  <div class="meta">Snapshot generated <span class="mono">__GENERATED_AT__</span> &middot; refresh with <code class="mono">python3 pipeline/crm.py dashboard</code></div>
+  <div class="meta">Snapshot generated <span class="mono">__GENERATED_AT__</span><br>refresh with <code class="mono" style="background:var(--surface-sunken);padding:1px 6px;border-radius:4px;">python3 pipeline/crm.py dashboard</code></div>
 </header>
 
 <div class="stat-grid" id="statGrid"></div>
 
+<div class="funnel-wrap">
+  <div class="funnel-track" id="funnelTrack" role="img" aria-label="Pipeline stage distribution"></div>
+  <div class="funnel-legend" id="funnelLegend"></div>
+</div>
+
 <section id="dueSection">
-  <h2>Needs a follow-up <span class="count-badge" id="dueCount">0</span></h2>
+  <h2 class="display">Needs a follow-up <span class="count-badge" id="dueCount">0</span></h2>
   <div class="due-list" id="dueList"></div>
 </section>
 
 <section>
-  <h2>All contacts <span class="count-badge" id="totalCount">0</span></h2>
+  <h2 class="display">All contacts <span class="count-badge" id="totalCount">0</span></h2>
   <div class="toolbar">
     <input type="search" id="search" placeholder="Search company or contact&hellip;" aria-label="Search contacts">
     <div id="stageFilters" role="group" aria-label="Filter by stage"></div>
@@ -238,6 +315,46 @@
     statGrid.appendChild(tile);
   });
 
+  // ---- funnel bar (active pipeline stages, lost called out separately) ----
+  var funnelOrder = ["Prospecting", "Contacted", "Replied", "Sample Sent", "Quote Sent", "Customer"];
+  var funnelTotal = DATA.filter(function (r) { return r.stage !== "Churned" && r.stage !== "Closed-lost"; }).length;
+  var track = document.getElementById("funnelTrack");
+  var legend = document.getElementById("funnelLegend");
+  if (funnelTotal === 0) {
+    track.innerHTML = '';
+    var emptySeg = document.createElement('div');
+    emptySeg.className = 'funnel-seg';
+    emptySeg.style.width = '100%';
+    emptySeg.style.background = 'transparent';
+    track.appendChild(emptySeg);
+  } else {
+    funnelOrder.forEach(function (s) {
+      var n = counts[s] || 0;
+      if (n === 0) return;
+      var seg = document.createElement('div');
+      seg.className = 'funnel-seg';
+      seg.style.width = (100 * n / funnelTotal) + '%';
+      seg.style.background = 'var(--stage-' + STAGE_KEY[s] + '-fg)';
+      seg.title = s + ': ' + n;
+      track.appendChild(seg);
+    });
+  }
+  funnelOrder.forEach(function (s) {
+    var n = counts[s] || 0;
+    if (n === 0 && funnelTotal > 0) return;
+    var item = document.createElement('span');
+    item.className = 'item';
+    item.innerHTML = '<span class="swatch" style="background:var(--stage-' + STAGE_KEY[s] + '-fg)"></span>' + esc(s) + ' <span class="mono">' + n + '</span>';
+    legend.appendChild(item);
+  });
+  var lostCount = counts["__lost__"] || 0;
+  if (lostCount > 0) {
+    var lostItem = document.createElement('span');
+    lostItem.className = 'item lost';
+    lostItem.textContent = lostCount + ' churned / lost';
+    legend.appendChild(lostItem);
+  }
+
   // ---- due list ----
   var due = DATA.filter(function (r) {
     return !CLOSED[r.stage] && r.next_action_date && r.next_action_date <= todayISO();
@@ -245,7 +362,6 @@
 
   document.getElementById("dueCount").textContent = due.length;
   var dueList = document.getElementById("dueList");
-  var dueSection = document.getElementById("dueSection");
   if (due.length === 0) {
     dueList.innerHTML = '<div class="empty-state"><p>Nothing overdue right now.</p></div>';
   } else {
@@ -313,6 +429,7 @@
     if (DATA.length === 0) {
       area.innerHTML =
         '<div class="empty-state">' +
+        '<div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 11 13.75 13 12"/></svg></div>' +
         '<p><strong>No contacts yet.</strong></p>' +
         '<p>Rows appear here automatically once <code>outbound-sdr</code>, <code>inbound-rfq</code>, or <code>customer-success</code> log a company &mdash; try <code>/outreach &lt;company&gt;</code> or <code>/rfq &lt;message&gt;</code> in Claude Code.</p>' +
         '</div>';
