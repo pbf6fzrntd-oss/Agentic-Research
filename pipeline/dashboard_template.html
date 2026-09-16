@@ -3,103 +3,104 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   /*
-    Design: warm botanical neutrals (a nod to "Advancing the Science of
-    Nature") with a single green accent carried through both themes.
-    Fraunces (display) for the wordmark and section titles gives it a
+    Design: a brighter, more saturated green carries the brand ("Advancing
+    the Science of Nature") through a pale mint ground instead of a neutral
+    beige one, so the accent has real contrast to pop against. Fraunces
+    (display) for the wordmark and section titles gives it a
     scientific-journal character instead of a generic SaaS-dashboard
     feel; Inter for UI text; JetBrains Mono for tabular data.
   */
   :root {
-    --bg: #F7F7F1;
+    --bg: #EFFAF3;
     --surface: #FFFFFF;
-    --surface-sunken: #EFEFE5;
-    --border: #E1E1D2;
-    --ink: #1A2219;
-    --ink-2: #57614E;
-    --ink-3: #8A927E;
-    --accent: #2E7D4F;
-    --accent-soft: #3F9663;
+    --surface-sunken: #E1F5E8;
+    --border: #C3E9D0;
+    --ink: #0F2818;
+    --ink-2: #3F6B4E;
+    --ink-3: #74947F;
+    --accent: #16A34A;
+    --accent-soft: #22C55E;
     --accent-ink: #FFFFFF;
-    --accent-wash: #E7F3EA;
+    --accent-wash: #DCFCE7;
 
-    --stage-prospecting-bg: #ECECE0; --stage-prospecting-fg: #6B7263;
-    --stage-contacted-bg:   #E5EDFB; --stage-contacted-fg:   #3A5FCB;
-    --stage-replied-bg:     #EFE7FB; --stage-replied-fg:     #7C4FD0;
-    --stage-sample-bg:      #DFF3EF; --stage-sample-fg:      #0E8E7E;
-    --stage-quote-bg:       #FBF0D6; --stage-quote-fg:       #92620B;
-    --stage-customer-bg:    #E1F3E5; --stage-customer-fg:    #227A46;
-    --stage-lost-bg:        #FBE3E7; --stage-lost-fg:        #B3283F;
+    --stage-prospecting-bg: #E3E9E4; --stage-prospecting-fg: #56685C;
+    --stage-contacted-bg:   #DCEEFB; --stage-contacted-fg:   #2563C7;
+    --stage-replied-bg:     #EDE4FB; --stage-replied-fg:     #7C3FD6;
+    --stage-sample-bg:      #D3F3EC; --stage-sample-fg:      #0D8E77;
+    --stage-quote-bg:       #FBF0D0; --stage-quote-fg:       #92620B;
+    --stage-customer-bg:    #DCFCE7; --stage-customer-fg:    #16A34A;
+    --stage-lost-bg:        #FBE1E6; --stage-lost-fg:        #C0293F;
 
-    --eco-partner-bg:    #E1F3E5; --eco-partner-fg:    #227A46;
-    --eco-competitor-bg: #FBE3E7; --eco-competitor-fg: #B3283F;
-    --eco-status-good-bg: #E1F3E5; --eco-status-good-fg: #227A46;
-    --eco-status-active-bg: #E5EDFB; --eco-status-active-fg: #3A5FCB;
-    --eco-status-caution-bg: #FBF0D6; --eco-status-caution-fg: #92620B;
-    --eco-status-inactive-bg: #ECECE0; --eco-status-inactive-fg: #6B7263;
+    --eco-partner-bg:    #DCFCE7; --eco-partner-fg:    #16A34A;
+    --eco-competitor-bg: #FBE1E6; --eco-competitor-fg: #C0293F;
+    --eco-status-good-bg: #DCFCE7; --eco-status-good-fg: #16A34A;
+    --eco-status-active-bg: #DCEEFB; --eco-status-active-fg: #2563C7;
+    --eco-status-caution-bg: #FBF0D0; --eco-status-caution-fg: #92620B;
+    --eco-status-inactive-bg: #E3E9E4; --eco-status-inactive-fg: #56685C;
 
     color-scheme: light dark;
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0E140F;
-      --surface: #161D17;
-      --surface-sunken: #0F140F;
-      --border: #263329;
-      --ink: #EEF3ED;
-      --ink-2: #A7B3A1;
-      --ink-3: #71806C;
-      --accent: #4ADE80;
-      --accent-soft: #7CEBA5;
+      --bg: #0A1510;
+      --surface: #12201A;
+      --surface-sunken: #0D1712;
+      --border: #1F3A2A;
+      --ink: #EAFBF0;
+      --ink-2: #9FC7AC;
+      --ink-3: #6B9179;
+      --accent: #34E27A;
+      --accent-soft: #6DF0A3;
       --accent-ink: #06170C;
-      --accent-wash: #16281C;
+      --accent-wash: #133A22;
 
       --stage-prospecting-bg: #1C231D; --stage-prospecting-fg: #9BA396;
       --stage-contacted-bg:   #1B2440; --stage-contacted-fg:   #93AEFB;
       --stage-replied-bg:     #241B3D; --stage-replied-fg:     #C6A9FA;
       --stage-sample-bg:      #113330; --stage-sample-fg:      #5CEBD3;
       --stage-quote-bg:       #362B10; --stage-quote-fg:       #F2C766;
-      --stage-customer-bg:    #12261B; --stage-customer-fg:    #4ADE80;
+      --stage-customer-bg:    #133A22; --stage-customer-fg:    #34E27A;
       --stage-lost-bg:        #2C1620; --stage-lost-fg:        #FB7185;
 
-      --eco-partner-bg:    #12261B; --eco-partner-fg:    #4ADE80;
+      --eco-partner-bg:    #133A22; --eco-partner-fg:    #34E27A;
       --eco-competitor-bg: #2C1620; --eco-competitor-fg: #FB7185;
-      --eco-status-good-bg: #12261B; --eco-status-good-fg: #4ADE80;
+      --eco-status-good-bg: #133A22; --eco-status-good-fg: #34E27A;
       --eco-status-active-bg: #1B2440; --eco-status-active-fg: #93AEFB;
       --eco-status-caution-bg: #362B10; --eco-status-caution-fg: #F2C766;
-      --eco-status-inactive-bg: #1C231D; --eco-status-inactive-fg: #9BA396;
+      --eco-status-inactive-bg: #1B241C; --eco-status-inactive-fg: #8FAD9A;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0E140F;
-    --surface: #161D17;
-    --surface-sunken: #0F140F;
-    --border: #263329;
-    --ink: #EEF3ED;
-    --ink-2: #A7B3A1;
-    --ink-3: #71806C;
-    --accent: #4ADE80;
-    --accent-soft: #7CEBA5;
+    --bg: #0A1510;
+    --surface: #12201A;
+    --surface-sunken: #0D1712;
+    --border: #1F3A2A;
+    --ink: #EAFBF0;
+    --ink-2: #9FC7AC;
+    --ink-3: #6B9179;
+    --accent: #34E27A;
+    --accent-soft: #6DF0A3;
     --accent-ink: #06170C;
-    --accent-wash: #16281C;
+    --accent-wash: #133A22;
 
     --stage-prospecting-bg: #1C231D; --stage-prospecting-fg: #9BA396;
     --stage-contacted-bg:   #1B2440; --stage-contacted-fg:   #93AEFB;
     --stage-replied-bg:     #241B3D; --stage-replied-fg:     #C6A9FA;
     --stage-sample-bg:      #113330; --stage-sample-fg:      #5CEBD3;
     --stage-quote-bg:       #362B10; --stage-quote-fg:       #F2C766;
-    --stage-customer-bg:    #12261B; --stage-customer-fg:    #4ADE80;
+    --stage-customer-bg:    #133A22; --stage-customer-fg:    #34E27A;
     --stage-lost-bg:        #2C1620; --stage-lost-fg:        #FB7185;
 
-    --eco-partner-bg:    #12261B; --eco-partner-fg:    #4ADE80;
+    --eco-partner-bg:    #133A22; --eco-partner-fg:    #34E27A;
     --eco-competitor-bg: #2C1620; --eco-competitor-fg: #FB7185;
-    --eco-status-good-bg: #12261B; --eco-status-good-fg: #4ADE80;
+    --eco-status-good-bg: #133A22; --eco-status-good-fg: #34E27A;
     --eco-status-active-bg: #1B2440; --eco-status-active-fg: #93AEFB;
     --eco-status-caution-bg: #362B10; --eco-status-caution-fg: #F2C766;
-    --eco-status-inactive-bg: #1C231D; --eco-status-inactive-fg: #9BA396;
+    --eco-status-inactive-bg: #1B241C; --eco-status-inactive-fg: #8FAD9A;
   }
 
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; min-width: 0; }
   body {
     background: var(--bg);
     color: var(--ink);
@@ -108,8 +109,10 @@
     padding-block: 28px 48px;
     max-width: 1180px;
     margin-inline: auto;
+    overflow-wrap: break-word;
   }
   h1, h2, h3 { text-wrap: balance; margin: 0; }
+  code, .mono { overflow-wrap: anywhere; }
   .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
   .display { font-family: 'Fraunces', Georgia, serif; }
 
@@ -128,8 +131,12 @@
   header.page h1 { font-family: 'Fraunces', Georgia, serif; font-size: 25px; font-weight: 600; letter-spacing: -0.01em; }
   header.page h1 .accent { color: var(--accent); }
   header.page .tagline { color: var(--ink-3); font-size: 12px; margin-top: 2px; letter-spacing: 0.02em; }
-  header.page .meta { color: var(--ink-3); font-size: 13px; text-align: right; }
+  header.page .meta { color: var(--ink-3); font-size: 13px; text-align: right; max-width: 320px; }
   header.page .meta .mono { color: var(--ink-2); }
+  header.page .meta code {
+    background: var(--surface-sunken); padding: 1px 6px; border-radius: 4px;
+    display: inline-block; margin-top: 2px;
+  }
 
   .stat-grid {
     display: grid;
@@ -182,9 +189,9 @@
     background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent);
     border-radius: 8px; padding: 10px 14px;
   }
-  .due-row .company { font-weight: 600; }
-  .due-row .next-action { color: var(--ink-2); font-size: 13px; }
-  .due-row .when { margin-left: auto; font-size: 12px; color: var(--accent); font-weight: 600; }
+  .due-row .company { font-weight: 600; max-width: 100%; }
+  .due-row .next-action { color: var(--ink-2); font-size: 13px; max-width: 100%; }
+  .due-row .when { margin-left: auto; font-size: 12px; color: var(--accent); font-weight: 600; white-space: nowrap; }
 
   .empty-state {
     border: 1px dashed var(--border); border-radius: 10px;
@@ -224,8 +231,8 @@
   tbody tr:last-child td { border-bottom: none; }
   tbody tr:hover { background: var(--surface-sunken); }
   td.company-cell { font-weight: 600; }
-  td .sub { color: var(--ink-3); font-size: 12px; }
-  td.mono-cell { color: var(--ink-2); }
+  td .sub { color: var(--ink-3); font-size: 12px; overflow-wrap: break-word; }
+  td.mono-cell { color: var(--ink-2); word-break: break-all; }
 
   .pill {
     display: inline-block; padding: 2px 9px; border-radius: 6px;
@@ -234,18 +241,21 @@
 
   .eco-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
     gap: 12px;
+    align-items: start;
   }
   .eco-card {
     background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
     padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;
+    overflow: hidden;
   }
-  .eco-card .eco-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-  .eco-card .eco-name { font-weight: 700; font-size: 14px; }
-  .eco-card .eco-category { font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.04em; }
-  .eco-card .eco-summary { font-size: 13px; color: var(--ink-2); line-height: 1.45; }
-  .eco-card .eco-doc { font-size: 11px; color: var(--ink-3); }
+  .eco-card .eco-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 8px; }
+  .eco-card .eco-name { font-weight: 700; font-size: 14px; overflow-wrap: break-word; }
+  .eco-card .eco-category { font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.04em; overflow-wrap: break-word; }
+  .eco-card .eco-summary { font-size: 13px; color: var(--ink-2); line-height: 1.45; overflow-wrap: break-word; }
+  .eco-card .eco-doc { font-size: 11px; color: var(--ink-3); word-break: break-all; }
+  .eco-card:hover { border-color: var(--accent-soft); }
 
   footer.page {
     margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--border);
@@ -254,7 +264,7 @@
   footer.page code { font-family: 'JetBrains Mono', monospace; color: var(--ink-2); }
 
   @media (prefers-reduced-motion: no-preference) {
-    .stat-tile, .due-row, tbody tr, .funnel-seg { transition: background-color 0.15s ease, width 0.2s ease; }
+    .stat-tile, .due-row, tbody tr, .funnel-seg, .eco-card { transition: background-color 0.15s ease, border-color 0.15s ease, width 0.2s ease; }
   }
 </style>
 
@@ -273,7 +283,7 @@
       </div>
     </div>
   </div>
-  <div class="meta">Snapshot generated <span class="mono">__GENERATED_AT__</span><br>refresh with <code class="mono" style="background:var(--surface-sunken);padding:1px 6px;border-radius:4px;">python3 pipeline/crm.py dashboard</code></div>
+  <div class="meta">Snapshot generated <span class="mono">__GENERATED_AT__</span><br>refresh with <code class="mono">python3 pipeline/crm.py dashboard</code></div>
 </header>
 
 <div class="stat-grid" id="statGrid"></div>
