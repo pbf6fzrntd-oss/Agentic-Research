@@ -16,6 +16,7 @@ This is a port of the same agent architecture built for Shredly.io (an MCP-hosti
 | `/content <topic or "compare us to X">` | Blog/comparison/SEO content (content-seo) |
 | `/community <thread URL or announcement topic>` | Scientific/industry community reply or post (scientific-community) |
 | `/battlecard <competitor or route>` | Build/refresh a competitive battlecard (competitive-intel) |
+| `/partner <company or category>` | Research/profile a confirmed or prospective partner (partner-intel) |
 | `/pipeline [filter]` | Summarize the current pipeline |
 | `/dashboard` | Regenerate (and, once published, republish) the visual pipeline dashboard |
 
@@ -27,7 +28,7 @@ You can also just ask naturally ("draft a cold email to...") — Claude delegate
 - `playbooks/agent-discoverable-content.md` — checklist for content that AI agents can parse/cite accurately
 - `content/llms.txt` — canonical machine-readable summary of CitraChem, meant to be published at citrachem.com/llms.txt
 - `pipeline/contacts.csv` — the CRM's actual data (one row per company); `pipeline/crm.py` is the tool that reads/writes it; `pipeline/PIPELINE.md` is an auto-generated human-readable snapshot of the same data — edit the CSV via `crm.py`, not the snapshot
-- `content/`, `outreach/`, `leads/`, `customer-comms/`, `community/`, `battlecards/` — each agent's isolated output folder
+- `content/`, `outreach/`, `leads/`, `customer-comms/`, `community/`, `battlecards/`, `partners/` — each agent's isolated output folder
 - `.claude/agents/` — the subagent definitions themselves
 - `.claude/commands/` — the slash commands above
 
