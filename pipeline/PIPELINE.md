@@ -23,4 +23,5 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | BRC Therapeutics | Lucas Zumstein, MBA (VP of Operations) | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-brc-therapeutics.md |
 | Argent BioPharma | Amir Polak | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-argent-biopharma.md |
 | Endovia Health Sciences (fka Splash Beverage Group) | Brady Cobb | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-endovia-health-sciences.md |
+| Moore Lab, Scripps CMBB (UCSD) | Bradley S. Moore | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-moore-lab-scripps-cmbb.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
