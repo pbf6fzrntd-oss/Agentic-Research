@@ -21,4 +21,5 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | Cardiol Therapeutics Inc. | Dr. Andrew Hamer, MBChB (Chief Medical Officer & Head of R&D) | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-cardiol-therapeutics.md |
 | Ananda Pharma | Melissa Sturgess | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-ananda-pharma.md |
 | BRC Therapeutics | Lucas Zumstein, MBA (VP of Operations) | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-brc-therapeutics.md |
+| Argent BioPharma | Amir Polak | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-argent-biopharma.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
