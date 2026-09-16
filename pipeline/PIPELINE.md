@@ -14,4 +14,5 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | SciSparc Ltd. | Dr. Adi Zuloff-Shani, PhD | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-scisparc-ltd.md |
 | Kannalife Sciences, Inc. | William A. Kinney, PhD | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-kannalife-sciences.md |
 | SoRSE Technology | Michael Flemmens | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-sorse-technology.md |
+| GreenWay Herbal Products, LLC | Jeff Heeren | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-greenway-herbal-products.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
