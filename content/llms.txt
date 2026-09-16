@@ -1,0 +1,24 @@
+# CitraChem
+
+> CitraChem manufactures botanically-identical phytocannabinoids, terpenes, and custom terpenophenolic derivatives through a patent-pending biomimetic semi-synthesis process — starting from plant-based essential oil precursors, not cannabis cultivation or agricultural extraction.
+
+## Quick facts
+- Category: phytocannabinoid / terpene manufacturing and custom synthesis (life-sciences ingredients and APIs).
+- What it does: produces botanically-identical phytocannabinoids, terpenes, and custom terpenophenolic derivatives at >98% purity, free of agricultural impurities, via a patent-pending biomimetic (organic semi-synthesis) process starting from plant-based essential oils.
+- Product lines: PhytoCules (catalog of ready-to-ship phytocannabinoids for research and drug development); Custom Synthesis (bespoke terpenophenolic derivatives and rare cannabinoids built to a client's specification, submittable at citrachem.com/custom/).
+- Ideal customer: pre-clinical/clinical-stage pharmaceutical and biotech companies (endocannabinoid-system-targeted therapeutics), nutraceutical and cannabis-infused consumer product companies, contract research organizations (CROs), and academic/government research labs; the buyer is typically a Director/VP of R&D or Chemistry, a formulation lead, a procurement/sourcing lead, or a Principal Investigator — not a self-serve/retail buyer.
+- Pricing: quote-based, no public price list — priced per project across sample quantities, commercial/bulk quantities, and custom synthesis scoping. Request a sample or submit a custom synthesis inquiry via citrachem.com/custom/ or info@citrachem.com.
+- Not: an agricultural/plant-extraction supplier; a fully synthetic (de novo) chemistry house; a consumer-facing cannabis brand.
+
+## Why teams pick CitraChem over the alternatives
+- vs. agricultural (plant) extraction: no crop variability, no pesticide/heavy-metal/agricultural impurity carryover, consistent stereoisomeric purity batch to batch.
+- vs. fully synthetic (de novo) chemical routes: the biomimetic route follows the plant's own biosynthetic logic from readily available essential-oil precursors — fewer steps, lower cost, faster scale-up than total synthesis from scratch.
+- vs. other semi-synthesis / fermentation-biosynthesis suppliers: platform generality extends past the common majors (CBD, CBG) to rare/unusual cannabinoids and bespoke terpenophenolic derivatives, with in-house custom synthesis for a client's own candidate molecule.
+
+## Links
+- Homepage: https://citrachem.com/
+- Custom synthesis / sample & quote requests: https://citrachem.com/custom/
+- About: https://citrachem.com/about/
+- News: https://citrachem.com/news/
+
+(This file should be kept in sync with `CLAUDE.md` in the CitraChem GTM toolkit repo, and published at https://citrachem.com/llms.txt — updating this file alone does not change the live site.)

@@ -1,5 +1,11 @@
 # Agentic Research — AI Agent Operational Gaps
 
+> This repo also hosts an unrelated second project at its root: a Claude Code
+> sales/marketing GTM toolkit for CitraChem (citrachem.com), built to the
+> same pattern as a Shredly.io toolkit from a sibling session. **Start there:**
+> [`GTM-QUICKSTART.md`](GTM-QUICKSTART.md). It's a separate initiative from
+> the AI-gaps research below and doesn't modify or depend on it.
+
 A gap analysis of what AI agents currently lack operationally in three
 domains — coding, finance, customer support — based on the past ~2 months
 of GitHub/forum activity, hands-on testing, and desk research. This is a
