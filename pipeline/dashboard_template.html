@@ -30,6 +30,13 @@
     --stage-customer-bg:    #E1F3E5; --stage-customer-fg:    #227A46;
     --stage-lost-bg:        #FBE3E7; --stage-lost-fg:        #B3283F;
 
+    --eco-partner-bg:    #E1F3E5; --eco-partner-fg:    #227A46;
+    --eco-competitor-bg: #FBE3E7; --eco-competitor-fg: #B3283F;
+    --eco-status-good-bg: #E1F3E5; --eco-status-good-fg: #227A46;
+    --eco-status-active-bg: #E5EDFB; --eco-status-active-fg: #3A5FCB;
+    --eco-status-caution-bg: #FBF0D6; --eco-status-caution-fg: #92620B;
+    --eco-status-inactive-bg: #ECECE0; --eco-status-inactive-fg: #6B7263;
+
     color-scheme: light dark;
   }
 
@@ -54,6 +61,13 @@
       --stage-quote-bg:       #362B10; --stage-quote-fg:       #F2C766;
       --stage-customer-bg:    #12261B; --stage-customer-fg:    #4ADE80;
       --stage-lost-bg:        #2C1620; --stage-lost-fg:        #FB7185;
+
+      --eco-partner-bg:    #12261B; --eco-partner-fg:    #4ADE80;
+      --eco-competitor-bg: #2C1620; --eco-competitor-fg: #FB7185;
+      --eco-status-good-bg: #12261B; --eco-status-good-fg: #4ADE80;
+      --eco-status-active-bg: #1B2440; --eco-status-active-fg: #93AEFB;
+      --eco-status-caution-bg: #362B10; --eco-status-caution-fg: #F2C766;
+      --eco-status-inactive-bg: #1C231D; --eco-status-inactive-fg: #9BA396;
     }
   }
   :root[data-theme="dark"] {
@@ -76,6 +90,13 @@
     --stage-quote-bg:       #362B10; --stage-quote-fg:       #F2C766;
     --stage-customer-bg:    #12261B; --stage-customer-fg:    #4ADE80;
     --stage-lost-bg:        #2C1620; --stage-lost-fg:        #FB7185;
+
+    --eco-partner-bg:    #12261B; --eco-partner-fg:    #4ADE80;
+    --eco-competitor-bg: #2C1620; --eco-competitor-fg: #FB7185;
+    --eco-status-good-bg: #12261B; --eco-status-good-fg: #4ADE80;
+    --eco-status-active-bg: #1B2440; --eco-status-active-fg: #93AEFB;
+    --eco-status-caution-bg: #362B10; --eco-status-caution-fg: #F2C766;
+    --eco-status-inactive-bg: #1C231D; --eco-status-inactive-fg: #9BA396;
   }
 
   * { box-sizing: border-box; }
@@ -211,6 +232,21 @@
     font-size: 11px; font-weight: 700; white-space: nowrap;
   }
 
+  .eco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .eco-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .eco-card .eco-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .eco-card .eco-name { font-weight: 700; font-size: 14px; }
+  .eco-card .eco-category { font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.04em; }
+  .eco-card .eco-summary { font-size: 13px; color: var(--ink-2); line-height: 1.45; }
+  .eco-card .eco-doc { font-size: 11px; color: var(--ink-3); }
+
   footer.page {
     margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--border);
     color: var(--ink-3); font-size: 12px; display: flex; flex-wrap: wrap; gap: 6px 16px;
@@ -261,8 +297,17 @@
   <div id="tableArea"></div>
 </section>
 
+<section id="ecoSection">
+  <h2 class="display">Partners &amp; competitors <span class="count-badge" id="ecoCount">0</span></h2>
+  <div class="toolbar">
+    <input type="search" id="ecoSearch" placeholder="Search name or category&hellip;" aria-label="Search partners and competitors">
+    <div id="ecoTypeFilters" role="group" aria-label="Filter by type"></div>
+  </div>
+  <div id="ecoArea"></div>
+</section>
+
 <footer class="page">
-  <span>Data source: <code>pipeline/contacts.csv</code></span>
+  <span>Data source: <code>pipeline/contacts.csv</code>, <code>pipeline/ecosystem.csv</code></span>
   <span>This is a static snapshot, not a live feed &mdash; re-run the command above and republish to refresh.</span>
 </footer>
 
@@ -470,6 +515,91 @@
   }
 
   document.getElementById("search").addEventListener("input", render);
+  render();
+})();
+
+(function () {
+  var DATA = __ECOSYSTEM_DATA__;
+
+  var TYPE_KEY = { "partner": "partner", "competitor": "competitor" };
+  var STATUS_KEY = {
+    "confirmed": "good", "active": "active", "prospective": "caution",
+    "defunct": "inactive", "dormant": "inactive", "winding": "inactive", "discontinued": "inactive"
+  };
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function statusKey(status) {
+    var s = (status || "").toLowerCase();
+    for (var k in STATUS_KEY) { if (s.indexOf(k) !== -1) return STATUS_KEY[k]; }
+    return "active";
+  }
+
+  document.getElementById("ecoCount").textContent = DATA.length;
+
+  var activeTypes = {};
+  var typeFilters = document.getElementById("ecoTypeFilters");
+  ["partner", "competitor"].forEach(function (t) {
+    if (!DATA.some(function (r) { return r.type === t; })) return;
+    var chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "stage-chip";
+    chip.setAttribute("aria-pressed", "false");
+    chip.textContent = t === "partner" ? "Partners" : "Competitors";
+    chip.addEventListener("click", function () {
+      var pressed = chip.getAttribute("aria-pressed") === "true";
+      chip.setAttribute("aria-pressed", String(!pressed));
+      if (pressed) delete activeTypes[t]; else activeTypes[t] = true;
+      render();
+    });
+    typeFilters.appendChild(chip);
+  });
+
+  function render() {
+    var q = (document.getElementById("ecoSearch").value || "").toLowerCase();
+    var typeKeys = Object.keys(activeTypes);
+    var rows = DATA.filter(function (r) {
+      var matchesQ = !q ||
+        (r.name || "").toLowerCase().indexOf(q) !== -1 ||
+        (r.category || "").toLowerCase().indexOf(q) !== -1 ||
+        (r.summary || "").toLowerCase().indexOf(q) !== -1;
+      var matchesType = typeKeys.length === 0 || activeTypes[r.type];
+      return matchesQ && matchesType;
+    });
+
+    var area = document.getElementById("ecoArea");
+    if (DATA.length === 0) {
+      area.innerHTML =
+        '<div class="empty-state"><p><strong>No partners or competitors logged yet.</strong></p>' +
+        '<p>Run <code>/battlecard &lt;competitor&gt;</code> or <code>/partner &lt;company&gt;</code> in Claude Code, then add a row to <code>pipeline/ecosystem.csv</code>.</p></div>';
+      return;
+    }
+    if (rows.length === 0) {
+      area.innerHTML = '<div class="empty-state"><p>No partners or competitors match this search/filter.</p></div>';
+      return;
+    }
+
+    area.innerHTML = '<div class="eco-grid">' + rows.map(function (r) {
+      var typeKey = TYPE_KEY[r.type] || "partner";
+      var sKey = statusKey(r.status);
+      return '<div class="eco-card">' +
+        '<div class="eco-head">' +
+          '<span class="eco-name">' + esc(r.name) + '</span>' +
+          '<span class="pill" style="background:var(--eco-' + typeKey + '-bg);color:var(--eco-' + typeKey + '-fg)">' + (r.type === 'partner' ? 'Partner' : 'Competitor') + '</span>' +
+        '</div>' +
+        '<div class="eco-category">' + esc(r.category || '') + '</div>' +
+        '<div><span class="pill" style="background:var(--eco-status-' + sKey + '-bg);color:var(--eco-status-' + sKey + '-fg)">' + esc(r.status || '') + '</span></div>' +
+        '<div class="eco-summary">' + esc(r.summary || '') + '</div>' +
+        (r.doc_path ? '<div class="eco-doc mono">' + esc(r.doc_path) + '</div>' : '') +
+        '</div>';
+    }).join('') + '</div>';
+  }
+
+  document.getElementById("ecoSearch").addEventListener("input", render);
   render();
 })();
 </script>

@@ -46,6 +46,17 @@ CSV_PATH = os.path.join(HERE, "contacts.csv")
 SNAPSHOT_PATH = os.path.join(HERE, "PIPELINE.md")
 DASHBOARD_TEMPLATE_PATH = os.path.join(HERE, "dashboard_template.html")
 DASHBOARD_PATH = os.path.join(HERE, "dashboard.html")
+ECOSYSTEM_CSV_PATH = os.path.join(HERE, "ecosystem.csv")
+
+
+def load_ecosystem_rows():
+    """Read pipeline/ecosystem.csv (competitors/partners rollup, maintained
+    by hand or by battlecards/partners agents, not by this CRM's add/touch
+    commands — see CLAUDE.md's Ecosystem section)."""
+    if not os.path.exists(ECOSYSTEM_CSV_PATH):
+        return []
+    with open(ECOSYSTEM_CSV_PATH, newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
 
 
 def today():
@@ -214,13 +225,18 @@ def cmd_snapshot(args):
 
 def cmd_dashboard(args):
     rows = load_rows()
+    ecosystem_rows = load_ecosystem_rows()
     with open(DASHBOARD_TEMPLATE_PATH, encoding="utf-8") as f:
         template = f.read()
     generated_at = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    html = template.replace("__PIPELINE_DATA__", json.dumps(rows)).replace("__GENERATED_AT__", generated_at)
+    html = (
+        template.replace("__PIPELINE_DATA__", json.dumps(rows))
+        .replace("__ECOSYSTEM_DATA__", json.dumps(ecosystem_rows))
+        .replace("__GENERATED_AT__", generated_at)
+    )
     with open(DASHBOARD_PATH, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"Wrote {DASHBOARD_PATH} ({len(rows)} contacts). "
+    print(f"Wrote {DASHBOARD_PATH} ({len(rows)} contacts, {len(ecosystem_rows)} ecosystem entries). "
           f"Publish/update it with the Artifact tool to view it as a page.")
 
 
