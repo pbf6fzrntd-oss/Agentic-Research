@@ -53,7 +53,7 @@ It's a snapshot, not a live feed: it shows stat tiles per stage, an overdue-foll
 
 ## Automated outbound lead sourcing
 A Routine ("CitraChem Daily Outbound Lead Sourcing", trigger `trig_019HJMA7FBx1BqBSCuUxES43`) fires weekdays at 14:00 UTC into this same Claude Code session. Each run:
-- Sources 3-4 new, real, independently-verified prospect companies worldwide matching the ICP in `CLAUDE.md` (ECS-targeted pharma/biotech, nutraceutical/cannabis-infused consumer product companies, CROs, academic/government research labs), rotating sourcing signals across runs (publications, patent filings, press releases, conference programs, hiring posts) so it doesn't keep re-hitting the same result set.
+- Sources 5 new, real, independently-verified prospect companies worldwide matching the ICP in `CLAUDE.md` (ECS-targeted pharma/biotech, nutraceutical/cannabis-infused consumer product companies, CROs, academic/government research labs), rotating sourcing signals across runs (publications, patent filings, press releases, conference programs, hiring posts) so it doesn't keep re-hitting the same result set.
 - Checks `pipeline/crm.py find "<company>"` first to skip anything already tracked.
 - Delegates drafting to the `outbound-sdr` agent per company (LinkedIn DM unless a verified email actually exists — never a guessed email address), which logs the touch to the CRM itself.
 - Refreshes `pipeline/PIPELINE.md` and commits + pushes everything to this branch.
