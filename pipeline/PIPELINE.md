@@ -29,4 +29,9 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | McDougall Arthritis and Pain Lab, Dalhousie University | Prof. Jason J. McDougall | Prospecting | outbound | 2026-09-17 | Send follow-up touch 2 | 2026-09-24 | outbound-sdr | outreach/2026-09-17-dalhousie-mcdougall-lab.md |
 | Rare Cannabinoid Company | Jennifer Carlile | Prospecting | outbound | 2026-09-17 | Send follow-up touch 2 | 2026-09-24 | outbound-sdr | outreach/2026-09-17-rare-cannabinoid-company.md |
 | PleoPharma, Inc. | Bharat Warrier | Prospecting | outbound | 2026-09-17 | Send follow-up touch 2 | 2026-09-24 | outbound-sdr | outreach/2026-09-17-pleopharma.md |
+| Lupvindol Biosciences Ltd. | Hunter Land, PhD | Prospecting | outbound | 2026-09-18 | Send follow-up touch 2 | 2026-09-25 | outbound-sdr | outreach/2026-09-18-lupvindol-biosciences.md |
+| Restoration Biologics LLC | Farsh Guilak, PhD | Prospecting | outbound | 2026-09-18 | Send follow-up touch 2 | 2026-09-25 | outbound-sdr | outreach/2026-09-18-restoration-biologics.md |
+| William Paterson University | Prof. Emmanuel S. Onaivi, PhD | Prospecting | outbound | 2026-09-18 | Send follow-up touch 2 | 2026-09-25 | outbound-sdr | outreach/2026-09-18-onaivi-william-paterson.md |
+| NeuroTherapia, Inc. | Tony Giordano, PhD (President & CEO) | Prospecting | outbound | 2026-09-18 | Send follow-up touch 2 | 2026-09-25 | outbound-sdr | outreach/2026-09-18-neurotherapia.md |
+| CBD Life Sciences Inc. | Lisa Nelson | Prospecting | outbound | 2026-09-18 | Send follow-up touch 2 | 2026-09-25 | outbound-sdr | outreach/2026-09-18-cbd-life-sciences.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
