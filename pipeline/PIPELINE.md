@@ -43,5 +43,6 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | Cannovation Clinical Research Partners | Lisa Rich-Milan | Prospecting | outbound | 2026-09-22 | Send follow-up touch 2 | 2026-09-29 | outbound-sdr | outreach/2026-09-22-cannovation-crp.md |
 | Ananda Scientific, Inc. | Sohail R. Zaidi | Prospecting | outbound | 2026-09-22 | Send follow-up touch 2 | 2026-09-29 | outbound-sdr | outreach/2026-09-22-ananda-scientific.md |
 | GB Sciences, Inc. | Dr. Andrea Small-Howard | Prospecting | outbound | 2026-09-22 | Send follow-up touch 2 | 2026-09-29 | outbound-sdr | outreach/2026-09-22-gb-sciences.md |
+| Institute of Pharmaceutical Chemistry, Goethe University Frankfurt (Proschak Lab) | Prof. Ewgenij Proschak | Prospecting | outbound | 2026-09-22 | Send follow-up touch 2 | 2026-09-29 | outbound-sdr | outreach/2026-09-22-goethe-university-proschak-lab.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
 | Alterola Biotech, Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
