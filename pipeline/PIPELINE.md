@@ -39,5 +39,6 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | Florida A&M University (Sachdeva Lab) | Prof. Mandip Singh Sachdeva, PhD | Prospecting | outbound | 2026-09-21 | Send follow-up touch 2 | 2026-09-28 | outbound-sdr | outreach/2026-09-21-sachdeva-famu.md |
 | Cannabis Bioscience International Holdings | Dr. Rosangel Andrades | Prospecting | outbound | 2026-09-21 | Send follow-up touch 2 | 2026-09-28 | outbound-sdr | outreach/2026-09-21-cannabis-bioscience-international.md |
 | UCLA Dept. of Chemistry & Biochemistry (Garg/Houk/Tang Lab) | Prof. Neil K. Garg | Prospecting | outbound | 2026-09-21 | Send follow-up touch 2 | 2026-09-28 | outbound-sdr | outreach/2026-09-21-ucla-garg-houk-tang-lab.md |
+| MIND Program, McLean Hospital / Harvard Medical School | Dr. Staci Gruber, PhD | Prospecting | outbound | 2026-09-22 | Send follow-up touch 2 | 2026-09-29 | outbound-sdr | outreach/2026-09-22-mind-program-mclean-harvard.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
 | Alterola Biotech, Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
