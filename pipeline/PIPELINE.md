@@ -48,3 +48,4 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | Center for Drug Discovery, Northeastern University (Makriyannis Lab) | Prof. Alexandros Makriyannis | Prospecting | outbound | 2026-09-23 | Send follow-up touch 2 | 2026-09-30 | outbound-sdr | outreach/2026-09-23-northeastern-cdd-makriyannis.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
 | Alterola Biotech, Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
+| DeFloria, Inc. (Ajna BioSciences / Charlotte's Web JV) |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
