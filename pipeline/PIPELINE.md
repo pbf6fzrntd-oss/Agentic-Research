@@ -46,6 +46,7 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | Institute of Pharmaceutical Chemistry, Goethe University Frankfurt (Proschak Lab) | Prof. Ewgenij Proschak | Prospecting | outbound | 2026-09-22 | Send follow-up touch 2 | 2026-09-29 | outbound-sdr | outreach/2026-09-22-goethe-university-proschak-lab.md |
 | UCSF — Clinical Pharmacology of THC-Infused Beverages Study | PI unconfirmed (candidate: Gideon St. Helen, PhD - unverified) | Prospecting | outbound | 2026-09-23 | Send follow-up touch 2 | 2026-09-30 | outbound-sdr | outreach/2026-09-23-ucsf-thc-beverages-study.md |
 | Center for Drug Discovery, Northeastern University (Makriyannis Lab) | Prof. Alexandros Makriyannis | Prospecting | outbound | 2026-09-23 | Send follow-up touch 2 | 2026-09-30 | outbound-sdr | outreach/2026-09-23-northeastern-cdd-makriyannis.md |
+| Department of Chemistry, University of Milan (Passarella Lab) | Prof. Daniele Passarella | Prospecting | outbound | 2026-09-24 | Send follow-up touch 2 | 2026-10-01 | outbound-sdr | outreach/2026-09-24-milan-passarella-lab.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
 | Alterola Biotech, Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
 | DeFloria, Inc. (Ajna BioSciences / Charlotte's Web JV) |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
