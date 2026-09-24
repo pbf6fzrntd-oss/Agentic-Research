@@ -48,6 +48,7 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | Center for Drug Discovery, Northeastern University (Makriyannis Lab) | Prof. Alexandros Makriyannis | Prospecting | outbound | 2026-09-23 | Send follow-up touch 2 | 2026-09-30 | outbound-sdr | outreach/2026-09-23-northeastern-cdd-makriyannis.md |
 | Department of Chemistry, University of Milan (Passarella Lab) | Prof. Daniele Passarella | Prospecting | outbound | 2026-09-24 | Send follow-up touch 2 | 2026-10-01 | outbound-sdr | outreach/2026-09-24-milan-passarella-lab.md |
 | Department of Pharmacology, University of the Basque Country (Rodriguez-Puertas Lab) | Prof. Rafael Rodriguez-Puertas | Prospecting | outbound | 2026-09-24 | Send follow-up touch 2 | 2026-10-01 | outbound-sdr | outreach/2026-09-24-upv-ehu-rodriguez-puertas-lab.md |
+| Special Research Incubator Unit for Cannabis-Hemp and Phytochemicals in Veterinary Medicine, Kasetsart University | Natthasit Tansakul | Prospecting | outbound | 2026-09-24 | Send follow-up touch 2 | 2026-10-01 | outbound-sdr | outreach/2026-09-24-kasetsart-veterinary-cannabinoid-unit.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
 | Alterola Biotech, Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
 | DeFloria, Inc. (Ajna BioSciences / Charlotte's Web JV) |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
