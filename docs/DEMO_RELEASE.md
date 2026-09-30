@@ -1,0 +1,11 @@
+# Read-only evidence demo
+
+Python 3.11+; no dependencies. `python scripts/evidence_demo.py` builds `generated/v2/index.html`, ranked.csv and manifest.json. Open index.html locally or run `python -m http.server 8000 --bind 127.0.0.1 --directory generated/v2`. Filter domain/theme/source type, inspect rubric rationale, expand evidence and open its source citation. Search filters visibility; scores still describe the full fixed cohort.
+
+Version `unique-reference-v2` counts normalized citation references, separately from mention rows. Neither count measures independent respondents, market demand or population response rates. Manual scores remain 0–3. Imprecise year/month dates remain visible; date bounds are expanded only to represent their uncertainty, not treated as exact observation days. The manifest records SHA256 input hashes, counts and date precision. Original output CSVs and REPORT.md retain the historical methodology and are not overwritten. Compare versions with their definitions attached.
+
+Refresh uses `scripts/fetch_github_issues.py`. It validates windows/pagination, records total/unique counts, fetched pages and completeness. Page errors, duplicates, incomplete_results, changing totals, count mismatches or the 1,000-result search ceiling prevent replacing a previous success and exit nonzero. Split large date windows and dedupe identities when combining. GitHub search can change while paginating: the completeness checks are conservative signals, not a transactional snapshot guarantee. Only explicit --allow-partial permits a marked incomplete artifact; do not use it as complete research evidence.
+
+The explorer does no web refresh. New raw snapshots require supervised review and manual validated findings/rubric entries. Theme conclusions are traceable to displayed citations; Phase 2 extrapolations are not new observed findings. Use a bespoke evidence briefing to test buyer interest before building subscription delivery. Track source inspections, qualified inquiries and reproducibility; do not equate score rank to product-market fit.
+
+Run `python -m unittest discover -s tests -v`. Rebuild twice and compare artifact hashes. For rollback, restore the prior code; frozen historical output is unchanged. Generated files are derived from committed inputs and can be rebuilt.

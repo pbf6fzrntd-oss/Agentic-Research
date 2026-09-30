@@ -1,6 +1,6 @@
 # Agent Operational Gaps — Research Spec
 
-**Status:** Phase 1 (current-state gap analysis) — complete, pending review.
+**Status:** Phase 1 and the Phase 2 extrapolation deliverable are written, pending review. Phase 2 is a hypothesis exercise, not newly observed evidence. See the versioned demo release for unique-reference scoring.
 Phase 2 (future/expanding-ecosystem implications) is deliberately **not**
 started; see "Out of scope for this phase" below.
 

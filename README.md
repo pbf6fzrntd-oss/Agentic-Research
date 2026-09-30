@@ -82,3 +82,8 @@ or file reference this session used to produce the finding. Every claim in
 `REPORT.md` traces back to a specific row. See the spec's Sourcing table
 for exactly which data sources were reachable from the research environment
 and which weren't (Reddit and Hacker News, notably, were not — see spec).
+
+
+## Versioned evidence explorer
+
+Run `python3 scripts/evidence_demo.py`, then open `generated/v2/index.html`. [Demo release notes](docs/DEMO_RELEASE.md) describe unique-reference scoring, date uncertainty, completeness gates and the preserved historical outputs. The interactive explorer is read-only and uses fixed inputs.
