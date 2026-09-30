@@ -1,8 +1,8 @@
 # Opportunity Brief: Pfizer — Eliquis/Xtandi Patent Cliffs, Reframed Around Existing CB2 Program
 
-**Date:** 2026-09-30
+**Date:** 2026-09-30 (updated same day — see Section 6)
 **Researcher:** pharma-research agent
-**Status: The strongest existing-ECS-activity signal found in this entire sweep — but it is disconnected from both named patent-cliff drugs. Flagging honestly rather than forcing a cliff-drug narrative that doesn't hold up.**
+**Status: RESOLVED / CLOSED (see Section 6). Olorinab was the strongest existing-ECS-activity signal found in this entire sweep, and it is disconnected from both named patent-cliff drugs — but a same-day follow-up pass found convergent evidence the program is discontinued. Not actionable.**
 
 ---
 
@@ -33,3 +33,23 @@ Checked `research/OPPORTUNITY-MAP.md`'s "Existing relationships" table — Pfize
 ## 5. Recommended next step & owner
 
 **Verify before anything else moves forward:** the single highest-value next step is simply confirming whether olorinab/APD371 is still an active Pfizer program in 2026 — a person with access to Pfizer's pipeline page, a paid pipeline database (e.g. GlobalData, Evaluate), or Pfizer's Q3/Q4 2026 earnings materials could resolve this in minutes; this agent could not due to the egress block. If confirmed active: hand to **`partner-intel`** to scope this as a reference-standard/comparator-material relationship (same shape as the Synendos/NeuroTherapia/Skye precedents `outbound-sdr` has already used), explicitly pitched around CB2 pharmacology and IBD relevance, not around Eliquis or Xtandi. If confirmed discontinued or unconfirmed after a real attempt to check: **not actionable — Pfizer stays on the "Intel Inside" list in principle, but this specific opening closes**, and a future brief would need a different Pfizer signal (a different pipeline asset or drug) to reopen the company as a target.
+
+---
+
+## 6. Follow-up pass (2026-09-30, same day) — status resolved: olorinab is discontinued. Thread closed.
+
+**Existing-relationship re-check:** re-confirmed `research/OPPORTUNITY-MAP.md`'s "Existing relationships" table does not list Pfizer, and `python3 pipeline/crm.py find "Pfizer"` returns no match. Still a clean, untouched target as a company — the finding below closes this *specific* opening, not Pfizer as a company.
+
+**What was checked:** Pfizer's own pipeline/I&I pages (`pfizer.com/science/inflammation-immunology/pipeline`, `pfizer.com/science/drug-product-pipeline`) — still `EGRESS_BLOCKED` on direct fetch, consistent with the original brief; clinicaltrials.gov, Wikipedia, AdisInsight, DrugBank, pharmacompass.com, PatSnap Synapse, and FierceBiotech — all also `EGRESS_BLOCKED` on direct `WebFetch`, so every finding below is from `WebSearch` result snippets only, not independently page-verified. Multiple independent search angles were run: Pfizer pipeline/SEC filings, clinicaltrials.gov, press releases, post-acquisition trade coverage, and a commercial pharma-intelligence database.
+
+**Findings, triangulated from several independent angles:**
+1. **No trial, publication, conference, or news activity of any kind involving olorinab/APD371 was found after the March 2021 CAPTIVATE Phase 2b readout and Arena's own "evaluating strategic options" language that followed it.** Nearly five years of silence on a named clinical asset is itself a signal at a company the size of Pfizer, which publicizes even modest wins.
+2. **Pfizer's own post-acquisition portfolio cleanup (reported by FierceBiotech/BioSpace, ~Sept–Oct 2022) explicitly named which Arena assets it was keeping vs. cutting: etrasimod was kept ("etrasimod alone was worthy of the biotech's $6.7 billion price tag"), and temanogrel, APD418, PF-06480605, and RIST472 were explicitly named as discontinued.** Olorinab was not explicitly named in either list in the snippets found — but the "etrasimod alone was worthy of it" framing, repeated verbatim across multiple outlets, strongly implies the rest of the Arena pipeline (including an asset that had already missed its Phase 2b primary endpoint pre-acquisition) was not prioritized.
+3. **Pfizer's current public description of its inflammation/immunology gastroenterology pipeline (via a drugdiscoverynews.com piece on "Pfizer's next-generation therapies for IBD") lists PF-07899895 (SIK inhibitor), PF-07054894 (CCR6 antagonist), PF-07261271 (p40/TL1a bispecific), and etrasimod — no CB2 agonist, no olorinab, appears among Pfizer's current named IBD assets.**
+4. **A commercial pharma-intelligence database (PatSnap Synapse), with a record last updated Dec 13, 2025, explicitly lists olorinab's status as "Discontinued Phase 2"** (mechanism: CB2 agonist; indications: IBS-C, IBS-D, abdominal pain, Crohn's disease, all reaching Phase 2). This is the single most direct status claim found, though it comes from a search-snippet view of a subscription database, not an independently page-verified primary source — flagged accordingly, but it corroborates findings 1–3 rather than standing alone.
+5. **No evidence of a divestiture, out-license, or spin-out of olorinab to a third party was found** — no company other than Pfizer (or, historically, Arena) is associated with the molecule in any search result.
+6. **No other current Pfizer cannabinoid/ECS pipeline activity was found beyond olorinab.** A legacy Pfizer-originated FAAH inhibitor, PF-04457845, turned up in search results, but it traces to ~2011-era pharmacology literature (a published covalent FAAH inhibitor tool compound), not a current clinical program — this is decades-old internal research chemistry, not a live 2025-2026 pipeline asset, and should not be read as ongoing ECS interest at Pfizer.
+
+**Conclusion: treat olorinab/APD371 as a dead program at Pfizer.** No single source explicitly states "Pfizer discontinued olorinab" in so many words, but the convergence of (a) total activity silence since 2021, (b) Pfizer's own contemporaneous "etrasimod alone was worthy of it" framing after cutting four other named Arena assets, (c) its absence from Pfizer's current named IBD pipeline, and (d) a commercial database's direct "Discontinued Phase 2" status tag is sufficient to close this thread with reasonable confidence rather than leave it open indefinitely. This is a clear negative finding, not a non-finding.
+
+**Recommendation:** **Do not hand this to `partner-intel` or `outbound-sdr`.** This specific opening is closed. Pfizer remains on the "Intel Inside" named target list in principle (per the deck), but a future case for approaching Pfizer would need a different, current pipeline asset or public ECS-interest signal — not olorinab. See the corresponding edit to `research/OPPORTUNITY-MAP.md`'s open-threads section, made the same day.
