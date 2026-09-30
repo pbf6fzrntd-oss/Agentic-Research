@@ -51,6 +51,7 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | UC San Diego Center for Pain Medicine (Schuster Lab) | Dr. Nathaniel Schuster | Prospecting | outbound | 2026-09-30 | Send follow-up touch 2 | 2026-10-07 | outbound-sdr | outreach/2026-09-30-ucsd-schuster-migraine-lab.md |
 | MUSC Hollings Cancer Center (DeMore Lab) | Dr. Nancy DeMore (Nancy Klauber-DeMore) | Prospecting | outbound | 2026-09-30 | Send follow-up touch 2 | 2026-10-07 | outbound-sdr | outreach/2026-09-30-musc-demore-breast-cancer.md |
 | Delphian Therapeutics | George Pappas | Prospecting | outbound | 2026-09-30 | Send follow-up touch 2 | 2026-10-07 | outbound-sdr | outreach/2026-09-30-delphian-therapeutics.md |
+| University of Iowa Carver College of Medicine (Russo Lab) | Andrew F. Russo, PhD | Prospecting | outbound | 2026-09-30 | Send follow-up touch 2 | 2026-10-07 | outbound-sdr | outreach/2026-09-30-iowa-russo-migraine-lab.md |
 | GreenWay Herbal Products, LLC | Jeff Heeren | Prospecting | outbound | 2026-09-16 | DO NOT auto-follow-up -- existing MOU client per Series A deck; needs human review of stage/owner (likely customer-success, not outbound-sdr) |  | outbound-sdr | outreach/2026-09-16-greenway-herbal-products.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
 | Alterola Biotech, Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
