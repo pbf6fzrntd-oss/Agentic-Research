@@ -4,6 +4,8 @@ Distilled from `CitraChem_Series_A_10_UA_5-22-26.pdf` (the company's own Series 
 
 **Read this file — specifically the "Existing relationships" section below — before sourcing or touching any of these company names as a cold outbound prospect.** Several of them are already CitraChem clients or warm/monitoring accounts per the company's own materials, not new leads.
 
+See `research/briefs/INDEX.md` for a one-line-per-brief scan of everything `pharma-research` has already investigated (actionable, weak/speculative, disqualified, or a negative sweep) before starting a new research pass — check it first so you don't re-walk a closed thread.
+
 ---
 
 ## Existing relationships — NOT cold-outbound targets
