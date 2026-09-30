@@ -1,0 +1,28 @@
+# Delphian Therapeutics — Touch 1 (Outbound, Signal-Based)
+
+**Channel:** LinkedIn DM (default fallback — see contact-verification note below)
+**Recipient:** George Pappas — Founder/CEO, Delphian Therapeutics (Chicago, IL; formerly Schedule 1 Therapeutics), per LinkedIn (linkedin.com/in/george-pappas-a149168/), corroborated by an independent web-search summary identifying him as CEO of the company under its prior name.
+
+**IMPORTANT CONTACT CORRECTION vs. the task brief:** The task and the source brief (`research/briefs/2026-09-30-iowa-leiden-migraine-labs.md`) named the target contact as "Kevin Marks, PhD, CEO/co-founder." Independent verification this session found this is incorrect — it appears to be a name collision with an unrelated company. Kevin Marks, PhD is co-founder/President/CEO of **Delphia Therapeutics** (note the spelling: Delphia, not Delphian) — a Cambridge, MA oncology biotech (GV/Google Ventures-backed, "activation lethality" cancer platform, $67M Series A, May 2024), confirmed via multiple independent, mutually-consistent sources (Delphia's own launch press release, BioSpace, GV's team page, multiple BusinessWire appointment releases). This is a distinct company from **Delphian Therapeutics** (Chicago, IL, formerly Schedule 1 Therapeutics, cannabinoid-based migraine therapeutics, S1-220), whose Founder/CEO is **George Pappas**, confirmed via two independent LinkedIn listings ("George Pappas — Founder/CEO, Delphian Therapeutics") and a separate web-search summary describing George Pappas as CEO of Schedule 1 Therapeutics/Delphian Therapeutics. No PhD credential for Pappas was verified this session, so none is used in the draft. Drafted to Pappas, not Marks — flagging this clearly for the record and for `research/OPPORTUNITY-MAP.md`/brief correction.
+
+**Contact-channel note:** No verified email surfaced for George Pappas or a general Delphian Therapeutics inbox this session — delphiantx.com, delphiantherapeutics.com, sbir.gov, cbinsights.com, and bpjw.bio.org were all `EGRESS_BLOCKED` on direct fetch, and WebSearch did not surface a first-party email. Per instructions, defaulting to LinkedIn DM rather than guessing an email address. Recommend a human confirm a direct email (e.g. via the SBIR.gov award's PI-of-record contact, or delphiantx.com's contact form) before a future touch.
+
+**Signal source (independently verified via live web search, not solely the brief):** Delphian Therapeutics (Chicago; formerly Schedule 1 Therapeutics) is a clinical-stage biotech developing S1-220, a 100:1 CBD:THC fixed-dose combination formulated as a sublingual spray for migraine, built on an SBIR/STTR-funded Phase I/II partnership with the University of Iowa, targeting FDA IND clearance and a Phase 1 trial — confirmed via multiple independent sources (bio.org conference listing describing Delphian as "a clinical-stage company targeting novel, multi-modal mechanisms to treat large pain and neurological disorders, starting with migraine"; an sbir.gov portfolio listing referencing the Iowa STTR partnership and S1-220's 100:1 ratio and sublingual-spray formulation goal). This is the direct commercial/clinical vehicle for the same 100:1 CBD:THC science published in two 2025 *Cephalalgia* papers from the University of Iowa (Russo lab) showing that ratio rescues CGRP-induced migraine symptoms in mice (DOIs 10.1177/03331024251314487 and 10.1177/03331024251392103, per the companion brief). The specific $3.19M combined award figure cited in the brief is sbir.gov-sourced but could not be re-verified by direct fetch this session (blocked); it is not repeated as a hard number in the outbound message.
+
+---
+
+**Message (LinkedIn DM):**
+
+George,
+
+Delphian's S1-220 program — a 100:1 CBD:THC sublingual spray for migraine, built on the University of Iowa STTR partnership — sits on the same fixed-ratio science as the 2025 *Cephalalgia* papers showing that ratio rescues CGRP-induced migraine symptoms in mice. As you move toward IND, the consistency of that 100:1 ratio batch to batch becomes a real formulation variable.
+
+CitraChem manufactures CBD and THC via a patent-pending biomimetic semi-synthesis process — starting from plant-based essential oil precursors rather than cannabis cultivation or extraction — at >98% purity, without the agricultural impurity or batch variability that plant extraction carries. We've supported ECS-targeted programs at a similar stage (see our Waystone Pharmaceuticals collaboration).
+
+Worth sending research-scale samples with COAs of both cannabinoids at your target ratio, or a short technical conversation on IND-enabling supply? Happy to route through citrachem.com/custom/ if useful.
+
+— [Your name], CitraChem
+
+---
+
+*Qualification note: Strong fit per CLAUDE.md's ICP — a funded, clinical-stage biotech developing a specific fixed-ratio (100:1) CBD:THC candidate on an IND timeline is a closer match to the "pre-clinical/clinical-stage pharmaceutical and biotech" persona than a typical academic-sample lead, structurally similar to the Waystone Pharmaceuticals precedent cited in CLAUDE.md. Confirmed via `python3 pipeline/crm.py find "Delphian Therapeutics"` and `find "Schedule 1 Therapeutics"` (both no match) that this is not a duplicate. Message stays under 150 words, single sample/technical-conversation CTA, no invented pricing/MOQ/lead time, no GMP/regulatory claim, no named-competitor comparison, per `playbooks/RFQ-PLAYBOOK.md` touch 1. Does not overstate CitraChem's readiness to supply clinical-grade material — framed as a sample/technical conversation, not a clinical-supply commitment. Addressed to George Pappas (verified Founder/CEO) rather than "Kevin Marks, PhD" named in the task/brief — see contact-correction note above.*
