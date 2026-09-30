@@ -14,7 +14,6 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | SciSparc Ltd. | Dr. Adi Zuloff-Shani, PhD | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-scisparc-ltd.md |
 | Kannalife Sciences, Inc. | William A. Kinney, PhD | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-kannalife-sciences.md |
 | SoRSE Technology | Michael Flemmens | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-sorse-technology.md |
-| GreenWay Herbal Products, LLC | Jeff Heeren | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-greenway-herbal-products.md |
 | University of Mississippi R3CR | Dr. Ikhlas A. Khan, PhD | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-um-r3cr.md |
 | Multidisciplinary Center for Cannabinoid Research (MCCR), Hebrew University | Prof. Joseph (Yossi) Tam, DMD, PhD | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-mccr-hebrew-university.md |
 | MIRA Pharmaceuticals, Inc. | Dr. Itzchak Angel | Prospecting | outbound | 2026-09-16 | Send follow-up touch 2 | 2026-09-23 | outbound-sdr | outreach/2026-09-16-mira-pharmaceuticals.md |
@@ -49,6 +48,7 @@ Auto-generated from `pipeline/contacts.csv` by `python3 pipeline/crm.py snapshot
 | Department of Chemistry, University of Milan (Passarella Lab) | Prof. Daniele Passarella | Prospecting | outbound | 2026-09-24 | Send follow-up touch 2 | 2026-10-01 | outbound-sdr | outreach/2026-09-24-milan-passarella-lab.md |
 | Department of Pharmacology, University of the Basque Country (Rodriguez-Puertas Lab) | Prof. Rafael Rodriguez-Puertas | Prospecting | outbound | 2026-09-24 | Send follow-up touch 2 | 2026-10-01 | outbound-sdr | outreach/2026-09-24-upv-ehu-rodriguez-puertas-lab.md |
 | Special Research Incubator Unit for Cannabis-Hemp and Phytochemicals in Veterinary Medicine, Kasetsart University | Natthasit Tansakul | Prospecting | outbound | 2026-09-24 | Send follow-up touch 2 | 2026-10-01 | outbound-sdr | outreach/2026-09-24-kasetsart-veterinary-cannabinoid-unit.md |
+| GreenWay Herbal Products, LLC | Jeff Heeren | Prospecting | outbound | 2026-09-16 | DO NOT auto-follow-up -- existing MOU client per Series A deck; needs human review of stage/owner (likely customer-success, not outbound-sdr) |  | outbound-sdr | outreach/2026-09-16-greenway-herbal-products.md |
 | Tetra Bio-Pharma Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
 | Alterola Biotech, Inc. |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
 | DeFloria, Inc. (Ajna BioSciences / Charlotte's Web JV) |  | Closed-lost | outbound |  |  |  | outbound-sdr |  |
