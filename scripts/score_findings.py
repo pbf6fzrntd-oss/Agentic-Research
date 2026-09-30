@@ -22,6 +22,7 @@ in data/findings.csv's `theme` column (see spec). It does exactly three
 mechanical things: count response_rate per theme, join the manual value
 scores, multiply and sort.
 """
+from evidence_demo import read_rows, rank
 import csv
 import sys
 from collections import defaultdict
@@ -34,17 +35,18 @@ OUTPUT_DIR = ROOT / "output"
 
 
 def load_findings():
-    with open(FINDINGS, newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+    return read_rows(FINDINGS, ["id","domain","theme","source_type","title","citation","date","note"])
 
 
 def load_theme_scores():
-    with open(THEME_SCORES, newline="", encoding="utf-8") as f:
-        rows = list(csv.DictReader(f))
+    rows = read_rows(THEME_SCORES, ["domain","theme","theme_label","severity_score","cost_score","strategic_score","rationale"])
+    rank(load_findings(), rows)  # Validate before a dictionary can hide duplicate keys.
     return {(r["domain"], r["theme"]): r for r in rows}
 
 
 def build_theme_rows(findings, theme_scores):
+    rank(findings, list(theme_scores.values()))  # Reject missing keys/range/schema errors.
+    # Historical v1 counts mentions; response_rate is not a population rate.
     # Group findings by (domain, theme)
     grouped = defaultdict(list)
     for row in findings:

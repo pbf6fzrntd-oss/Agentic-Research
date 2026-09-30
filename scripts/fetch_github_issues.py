@@ -29,11 +29,12 @@ Notes:
     5000/hour.
   - Paginates automatically up to --max-pages (default 5 x 100 = 500 items).
 """
+from datetime import date, datetime, timezone
+from atomic import atomic_text
 import argparse
 import json
 import os
 import sys
-import time
 import urllib.request
 import urllib.parse
 import urllib.error
@@ -64,49 +65,81 @@ def fetch_page(query, page, per_page, sort, order, token):
     if token:
         req.add_header("Authorization", f"Bearer {token}")
     with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+        raw = resp.read(8_000_001)
+        if len(raw) > 8_000_000:
+            raise ValueError("Oversized search page")
+        return json.loads(raw.decode("utf-8"))
+
+
+def collect(query, per_page=100, max_pages=5, sort="created", order="desc", token=None, fetcher=fetch_page):
+    items_by_id = {}
+    total = None
+    problems = []
+    fetched_pages = []
+    for page in range(1, max_pages + 1):
+        try:
+            data = fetcher(query, page, per_page, sort, order, token)
+            if not isinstance(data.get("items"), list) or type(data.get("total_count")) is not int or data["total_count"] < 0:
+                raise ValueError("Invalid search response")
+            if total is not None and total != data["total_count"]:
+                problems.append("total_count changed during pagination")
+            total = data["total_count"]
+            if data.get("incomplete_results") is not False:
+                problems.append(f"page {page}: incomplete_results or missing completeness flag")
+            for item in data["items"]:
+                key = item.get("id")
+                if type(key) is not int or not item.get("html_url"):
+                    raise ValueError("Invalid issue identity")
+                if key in items_by_id:
+                    problems.append(f"duplicate issue identity on page {page}")
+                items_by_id[key] = item
+            fetched_pages.append(page)
+            if len(data["items"]) < per_page or len(items_by_id) >= total:
+                break
+        except (urllib.error.URLError, ValueError, KeyError, TypeError) as error:
+            problems.append(f"page {page} failed: {type(error).__name__}")
+            break
+    if total is None or len(items_by_id) != total:
+        problems.append("unique fetched count does not match total_count")
+    if total is not None and total > 1000:
+        problems.append("GitHub search ceiling exceeded; split the observation window")
+    return {"query":query,"fetched_at":datetime.now(timezone.utc).isoformat(),"total_count":total,"fetched_count":len(items_by_id),"pages":fetched_pages,"complete":not problems,"problems":problems,"items":list(items_by_id.values())}
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--owner", required=True)
     ap.add_argument("--repo", required=True)
-    ap.add_argument("--since", required=True, help="YYYY-MM-DD, inclusive")
-    ap.add_argument("--until", required=True, help="YYYY-MM-DD, inclusive")
-    ap.add_argument("--query", default="", help="Extra GitHub search qualifiers, e.g. 'label:bug'")
+    ap.add_argument("--since", required=True)
+    ap.add_argument("--until", required=True)
+    ap.add_argument("--query", default="")
     ap.add_argument("--sort", default="created", choices=["created", "updated", "comments", "reactions", "interactions"])
     ap.add_argument("--order", default="desc", choices=["asc", "desc"])
     ap.add_argument("--per-page", type=int, default=100)
     ap.add_argument("--max-pages", type=int, default=5)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--allow-partial", action="store_true", help="Explicitly write a marked incomplete snapshot")
     args = ap.parse_args()
-
-    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    if not token:
-        print("WARNING: no GITHUB_TOKEN/GH_TOKEN set — limited to 60 requests/hour unauthenticated",
-              file=sys.stderr)
-
-    query = build_query(args.owner, args.repo, args.since, args.until, args.query)
-    print(f"query: {query}", file=sys.stderr)
-
-    all_items = []
-    for page in range(1, args.max_pages + 1):
-        try:
-            data = fetch_page(query, page, args.per_page, args.sort, args.order, token)
-        except urllib.error.HTTPError as e:
-            print(f"HTTP {e.code} on page {page}: {e.read().decode('utf-8', 'replace')}", file=sys.stderr)
-            break
-        items = data.get("items", [])
-        all_items.extend(items)
-        print(f"page {page}: {len(items)} items (total_count={data.get('total_count')})", file=sys.stderr)
-        if len(items) < args.per_page:
-            break
-        time.sleep(1)  # be polite to the search API's stricter rate limit
-
-    with open(args.out, "w", encoding="utf-8") as f:
-        json.dump({"query": query, "fetched_count": len(all_items), "items": all_items}, f, indent=2)
-    print(f"wrote {len(all_items)} items to {args.out}", file=sys.stderr)
-
+    try:
+        if date.fromisoformat(args.since)>date.fromisoformat(args.until):
+            raise ValueError("Reversed observation window")
+        if not 1<=args.per_page<=100 or not 1<=args.max_pages<=10:
+            raise ValueError("Pagination must be 1..100 items and 1..10 pages")
+        import re
+        if not all(re.fullmatch(r"[A-Za-z0-9_.-]+", v) for v in [args.owner,args.repo]):
+            raise ValueError("Invalid repository identity")
+    except ValueError as error:
+        ap.error(str(error))
+    query = build_query(args.owner,args.repo,args.since,args.until,args.query)
+    result = collect(query,args.per_page,args.max_pages,args.sort,args.order,os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN"))
+    result.update(owner=args.owner,repo=args.repo,since=args.since,until=args.until,sort=args.sort,order=args.order)
+    if not result["complete"]:
+        print("Incomplete refresh: " + "; ".join(result["problems"]),file=sys.stderr)
+        if not args.allow_partial:
+            return 2  # Preserve previous successful artifact.
+    atomic_text(args.out,json.dumps(result,indent=2)+"\n")
+    print(f"Wrote {result['fetched_count']} unique issues; complete={result['complete']}",file=sys.stderr)
+    return 0
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
